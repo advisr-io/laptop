@@ -33,7 +33,7 @@ set -e
 touch "$HOME/.zshrc";
 
 HOMEBREW_PREFIX="/opt/homebrew"
-sudo softwareupdate --install-rosetta --agree-to-license
+#sudo softwareupdate --install-rosetta --agree-to-license
 
 if [ -d "$HOMEBREW_PREFIX" ]; then
   if ! [ -r "$HOMEBREW_PREFIX" ]; then
