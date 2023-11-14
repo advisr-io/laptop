@@ -5,14 +5,14 @@ touch "$output"
 
 files=(
   "./src/header"
-  "./src/dist"
   "./src/sudo"
   "./src/utils"
-  "./src/vars"
+  "./src/constants"
   "./src/brew"
   "./src/shell"
   "./src/oh_my_zsh"
   "./src/dotfiles"
+  "./src/submodules"
   "./src/vim"
   "./src/defaults"
 )

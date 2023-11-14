@@ -1,5 +1,3 @@
-# Ask for sudo upfront so we don't have to get it later
+# Ensure sudp is available
 sudo -v
-# Keep using sudo so the permissions don't time out
-# update existing sudo time stamp if set, otherwise do nothing.
 while true; do sudo -n true; sleep 10; kill -0 "$$" || exit; done 2>/dev/null &

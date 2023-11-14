@@ -1,3 +1,4 @@
+# Constants
 HOMEBREW_PREFIX="/opt/homebrew"
 OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
 LAPTOP_PREFIX="$HOME/.laptop"

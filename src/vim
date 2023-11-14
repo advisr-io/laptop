@@ -1,15 +1,1 @@
-mkdir -p "$VIM_BUNDLE"
-
-# Check if Vundle is install
-
-if [ -d "$VIM_VUNDLE" ]; then
-  fancy_echo "Updating Vundle ..."
-  cd "$VIM_VUNDLE" || exit
-  git pull
-  cd - || exit
-else
-  fancy_echo "Installing Vim Vundle ..."
-  git clone https://github.com/VundleVim/Vundle.vim.git "$VIM_VUNDLE"
-fi
-
 vim +PluginInstall +qall

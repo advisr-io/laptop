@@ -1,7 +1,9 @@
+# Setup Homebrew
 sudo mkdir -p "$HOMEBREW_PREFIX"
 sudo chflags norestricted "$HOMEBREW_PREFIX"
 sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
 
+# Install Homebrew if not already installed
 if ! command -v brew > /dev/null 2>&1; then
   fancy_echo "Installing Homebrew ..."
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh')"
@@ -9,14 +11,11 @@ if ! command -v brew > /dev/null 2>&1; then
   eval "$("$HOMEBREW_PREFIX"/bin/brew shellenv)"
 fi
 
-if brew list | grep -Fq brew-cask; then
-  fancy_echo "Uninstalling old Homebrew-Cask ..."
-  brew uninstall --force brew-cask
-fi
-
+# Update Homebrew formulae
 fancy_echo "Updating Homebrew formulae ..."
 brew update --force
 
+# Install packages and apps using brew and cask
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "homebrew/cask-versions"
