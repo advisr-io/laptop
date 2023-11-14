@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Welcome to the laptop script!
+# Be prepared to turn your laptop (or desktop, no haters here)
+# into an awesome development machine.
+
+_dir="$HOME/.laptop"
+_uname="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+if [ -d "$_dir" ]; then
+  fancy_echo "Updating Laptop ..."
+  cd "$_dir"
+  git pull
+  cd -
+else
+  fancy_echo "Installing Laptop ..."
+  git clone git@github.com:advisr-io/laptop.git "$_dir"
+fi
+
+cd "$_dir"
+sh -c "./${_uname}"
+cd -

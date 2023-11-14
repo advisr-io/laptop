@@ -22,7 +22,7 @@ Download, review, then execute the script:
 #### Mac
 
 ```sh
-curl -fsS 'https://raw.githubusercontent.com/advisr/laptop/main/mac' | sh
+curl -fsS 'https://raw.githubusercontent.com/advisr/laptop/updates/install' | sh
 ```
 
 Debugging
