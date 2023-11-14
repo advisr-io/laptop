@@ -22,5 +22,5 @@ else
 fi
 
 cd "$_dir" || exit
-sh -c "./dist/${_uname}"
+sh -c "./${_uname}"
 cd - || exit
