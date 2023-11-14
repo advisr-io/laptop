@@ -1,26 +1,23 @@
 dotfiles=(
-  "./dotfiles/tmux-tmate.conf"
-  "./dotfiles/tmate.conf"
-  "./dotfiles/tmux.conf"
-  "./dotfiles/vim"
-  "./dotfiles/vimrc"
-  "./dotfiles/zprezto"
-  "./dotfiles/zlogin"
-  "./dotfiles/zlogout"
-  "./dotfiles/zpreztorc"
-  "./dotfiles/zprofile"
-  "./dotfiles/zshenv"
-  "./dotfiles/zshrc"
-  "./dotfiles/zsh-themes"
+  "tmux-tmate.conf"
+  "tmate.conf"
+  "tmux.conf"
+  "vim"
+  "vimrc"
+  "zprezto"
+  "zlogin"
+  "zlogout"
+  "zpreztorc"
+  "zprofile"
+  "zshenv"
+  "zshrc"
+  "zsh-themes"
 )
-
-# Assuming CWD is your current working directory
-CWD=$(pwd)
 
 for dotfile in "${dotfiles[@]}"; do
   if [ -e "$HOME/.$dotfile" ]; then
-    mv "$HOME/.$dotfile" "$HOME/$dotfile.bak"
+    mv "$HOME/.$dotfile" "$HOME/.$dotfile.bak"
   fi
   echo "Installing $dotfile"
-  ln -sf "$CWD/$dotfile" "$HOME/.$dotfile"
+  ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
 done
