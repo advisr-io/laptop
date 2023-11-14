@@ -138,7 +138,6 @@ dotfiles=(
   "tmux-tmate.conf"
   "tmate.conf"
   "tmux.conf"
-  "vim"
   "vimrc"
   "zprezto"
   "zlogin"
