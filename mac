@@ -113,7 +113,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
   fancy_echo "Updating On My ZSH ..."
   cd "$HOME/.oh-my-zsh"
   git pull
-  cd -p
+  cd -
   source ~/.zshrc
 else
   fancy_echo "Installing On My ZSH ..."
