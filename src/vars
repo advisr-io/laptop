@@ -1,0 +1,4 @@
+HOMEBREW_PREFIX="/opt/homebrew"
+OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
+VIM_BUNDLE="$HOME/.vim/bundle"
+VIM_VUNDLE="$HOME/.vim/bundle/Vundle.vim"

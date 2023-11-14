@@ -5,18 +5,18 @@
 # into an awesome development machine.
 
 _dir="$HOME/.laptop"
-_uname="$(uname -s | tr '[:upper:]' '[:lower:]')"
+_uname="$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m)"
 
 if [ -d "$_dir" ]; then
   fancy_echo "Updating Laptop ..."
-  cd "$_dir"
+  cd "$_dir" || exit
   git pull
-  cd -
+  cd - || exit
 else
   fancy_echo "Installing Laptop ..."
   git clone git@github.com:advisr-io/laptop.git "$_dir"
 fi
 
-cd "$_dir"
-sh -c "./${_uname}"
-cd -
+cd "$_dir" || exit
+sh -c "./dist/${_uname}"
+cd - || exit

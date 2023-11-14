@@ -1,0 +1,19 @@
+# shellcheck disable=SC2154
+trap 'ret=$?; test $ret -ne 0 && printf "$ret\n\nfailed\n\n" >&2; exit $ret' EXIT
+set -e
+
+fancy_echo() {
+  printf "\n%s\n" "$1";
+}
+
+append_to_zshrc() {
+  text="$1"
+  skip_new_line="${2:-0}"
+
+  zshrc="$HOME/.zshrc"
+
+  if ! grep -Fqs "$text" "$zshrc"; then
+    [ "$skip_new_line" -ne 1 ] && printf "\n" >> "$zshrc";
+    printf "%s\n" "$text" >> "$zshrc"
+  fi
+}

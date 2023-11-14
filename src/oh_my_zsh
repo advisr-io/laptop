@@ -1,0 +1,10 @@
+#Check if Oh My Zsh is installed
+if [ -d "$OH_MY_ZSH_PREFIX" ]; then
+  fancy_echo "Updating On My ZSH ..."
+  cd "$OH_MY_ZSH_PREFIX" || exit
+  git pull
+  cd - || exit
+else
+  fancy_echo "Installing On My ZSH ..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
