@@ -1,14 +1,28 @@
-output="./darwin_arm64"
+stageOne="./darwin_arm64_1"
+stageTwo="./darwin_arm64_2"
 
-rm -rf "$output"
-touch "$output"
+rm -rf "$stageOne" "$stageTwo"
+touch "$stageOne"
+touch "$stageTwo"
 
-files=(
+stageOneFiles=(
   "./src/header"
   "./src/sudo"
   "./src/utils"
   "./src/constants"
   "./src/brew"
+)
+
+for file in "${stageOneFiles[@]}"; do
+  cat "$file" >> "$stageOne"
+  echo ""     >> "$stageOne"
+done
+
+stageTwoFiles=(
+  "./src/header"
+  "./src/sudo"
+  "./src/utils"
+  "./src/constants"
   "./src/shell"
   "./src/oh_my_zsh"
   "./src/dotfiles"
@@ -17,7 +31,7 @@ files=(
   "./src/defaults"
 )
 
-for file in "${files[@]}"; do
-  cat "$file" >> "$output"
-  echo ""     >> "$output"
+for file in "${stageTwoFiles[@]}"; do
+  cat "$file" >> "$stageTwo"
+  echo ""     >> "$stageTwo"
 done
