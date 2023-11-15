@@ -11,6 +11,8 @@ if ! grep -q "advisr-io/laptop.git" ".git/config"; then
   sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/updates/${_uname}_stage_one")"
   git clone git@github.com:advisr-io/laptop.git "$_dir"
   cd "$_dir" || exit
+  git checkout update
+  git pull
 fi
 
 sh -c "./${_uname}_stage_two"
