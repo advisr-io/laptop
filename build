@@ -23,11 +23,11 @@ stageTwoFiles=(
   "./src/sudo"
   "./src/utils"
   "./src/constants"
-  #"./src/shell"
-  #"./src/oh_my_zsh"
-  #"./src/submodules"
-  #"./src/dotfiles"
-  #"./src/vim"
+  "./src/shell"
+  "./src/oh_my_zsh"
+  "./src/submodules"
+  "./src/dotfiles"
+  "./src/vim"
   "./src/defaults"
 )
 
