@@ -40,7 +40,9 @@ filetype plugin indent on
 syntax on
 filetype plugin indent on
 
-colorscheme molokai
+if filereadable(expand("~/.vim/bundle/molokai/colors/molokai.vim"))
+  colorscheme molokai
+endif
 
 " For solarized
 " let g:solarized_termcolors=256
@@ -49,13 +51,7 @@ colorscheme molokai
 " set background=dark
 " colorscheme solarized
 
-if $term =~ '256color'
-  set t_co=256
-elseif $term =~ '^xterm$'
-  set t_co=256
-endif
-
-set nocursorline                " This fixes a lag issue with ruby syntax highlighting
+set nocursorline  " This fixes a lag issue with ruby syntax highlighting
 set number
 
 let mapleader=','
@@ -208,7 +204,6 @@ map <Leader>m :CtrlPMRU<cr>
 if filereadable(expand("~/.custom.vim"))
   source ~/.custom.vim
 endif
-
 
 "
 " Remove Trailing whitespace when saving a vim buffer
