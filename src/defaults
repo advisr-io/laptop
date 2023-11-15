@@ -319,9 +319,7 @@ osascript -e 'tell application "System Preferences" to quit'
 ## Kill affected applications                                                  #
 ################################################################################
 
-for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-  "Mail" "Safari" "SizeUp" "SystemUIServer" "Transmission" \
-  "Twitter" "iCal" "iTunes"; do
+for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
   killall "$app" > /dev/null 2>&1
 done
 
