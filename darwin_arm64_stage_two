@@ -25,7 +25,7 @@ export VIM_VUNDLE_PREFIX="$HOME/.vim/bundle/Vundle.vim"
 
 # Originally taken from: ~/.osx — http://mths.be/osx
 
-osascript -e 'tell application "System Preferences" to quit'
+#osascript -e 'tell application "System Preferences" to quit'
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -344,9 +344,9 @@ osascript -e 'tell application "System Preferences" to quit'
 ## Kill affected applications                                                  #
 ################################################################################
 
-for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
-  killall "$app" > /dev/null 2>&1
-done
+#for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
+  #killall "$app" > /dev/null 2>&1
+#done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
