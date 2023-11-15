@@ -1,6 +1,6 @@
 # Originally taken from: ~/.osx — http://mths.be/osx
 
-#osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Preferences" to quit'
 
 ###############################################################################
 # General UI/UX                                                               #
