@@ -46,6 +46,8 @@ else
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+git submodule update --init --recursive
+
 dotfiles=(
   "asdf"
   "tmux-tmate.conf"
@@ -70,8 +72,6 @@ for dotfile in "${dotfiles[@]}"; do
   echo "Installing $dotfile"
   ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
 done
-
-git submodule update --init --recursive
 
 vim +PluginInstall +qall
 
