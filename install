@@ -4,11 +4,6 @@
 # Be prepared to turn your laptop (or desktop, no haters here)
 # into an awesome development machine.
 
-whoami
-echo "$LOGIN"
-pwd
-ls -al
-
 _dir="$HOME/.laptop"
 _uname="$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m)"
 
