@@ -5,7 +5,7 @@
 # into an awesome development machine.
 
 _dir="$HOME/.laptop"
-_uname="$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m)"
+_uname="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
 if [ ! -f ".git/config" ] || ! grep -q "advisr-io/laptop.git" ".git/config"; then
   sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/updates/${_uname}_stage_one")"

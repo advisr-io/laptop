@@ -1,5 +1,5 @@
-stageOne="./darwin_arm64_stage_one"
-stageTwo="./darwin_arm64_stage_two"
+stageOne="./darwin_stage_one"
+stageTwo="./darwin_stage_two"
 
 rm -rf "$stageOne" "$stageTwo"
 touch "$stageOne"
