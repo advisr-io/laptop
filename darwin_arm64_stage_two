@@ -17,11 +17,11 @@ fancy_echo() {
 }
 
 # Constants
-HOMEBREW_PREFIX="/opt/homebrew"
-OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
-LAPTOP_PREFIX="$HOME/.laptop"
-VIM_BUNDLE_PREFIX="$HOME/.vim/bundle"
-VIM_VUNDLE_PREFIX="$HOME/.vim/bundle/Vundle.vim"
+export HOMEBREW_PREFIX="/opt/homebrew"
+export OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
+export LAPTOP_PREFIX="$HOME/.laptop"
+export VIM_BUNDLE_PREFIX="$HOME/.vim/bundle"
+export VIM_VUNDLE_PREFIX="$HOME/.vim/bundle/Vundle.vim"
 
 #change shell to zsh
 if [ "$(command -v zsh)" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
@@ -66,9 +66,17 @@ dotfiles=(
 )
 
 for dotfile in "${dotfiles[@]}"; do
-  if [ -e "$HOME/.$dotfile" ]; then
-    mv "$HOME/.$dotfile" "$HOME/.$dotfile.bak"
+  target="$LAPTOP_PREFIX/dotfiles/$dotfile"
+  link="$HOME/.$dotfile"
+
+  if [ -e "$link" ]; then
+    if [ "$(readlink "$link")" == "$target" ]; then
+      continue
+    fi
+
+    mv "$link" "$link.bak"
   fi
+
   echo "Installing $dotfile"
   ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
 done

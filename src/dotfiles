@@ -16,9 +16,17 @@ dotfiles=(
 )
 
 for dotfile in "${dotfiles[@]}"; do
-  if [ -e "$HOME/.$dotfile" ]; then
-    mv "$HOME/.$dotfile" "$HOME/.$dotfile.bak"
+  target="$LAPTOP_PREFIX/dotfiles/$dotfile"
+  link="$HOME/.$dotfile"
+
+  if [ -e "$link" ]; then
+    if [ "$(readlink "$link")" == "$target" ]; then
+      continue
+    fi
+
+    mv "$link" "$link.bak"
   fi
+
   echo "Installing $dotfile"
   ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
 done
