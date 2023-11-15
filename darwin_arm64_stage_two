@@ -49,11 +49,9 @@ fi
 git submodule update --init --recursive
 
 dotfiles=(
-  "asdf"
   "tmux-tmate.conf"
   "tmate.conf"
   "tmux.conf"
-  "vim"
   "vimrc"
   "zprezto"
   "zlogin"
@@ -79,6 +77,16 @@ for dotfile in "${dotfiles[@]}"; do
 
   echo "Installing $dotfile"
   ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
+done
+
+libraries=(
+  "asdf"
+  "vim"
+)
+
+for library in "${libraries[@]}"; do
+  echo "Linking $library"
+  ln -sf "$LAPTOP_PREFIX/$library" "$HOME/.$library"
 done
 
 vim +PluginInstall +qall
