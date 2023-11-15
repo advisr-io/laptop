@@ -100,13 +100,13 @@ osascript -e 'tell application "System Preferences" to quit'
 ###############################################################################
 
 # Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+#defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+#defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+#defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 # Save to disk (not to iCloud) by default
 #defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -417,5 +417,6 @@ for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
   "Twitter" "iCal" "iTunes"; do
   killall "$app" > /dev/null 2>&1
 done
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
