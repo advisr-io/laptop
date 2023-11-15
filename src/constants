@@ -1,6 +1,6 @@
 # Constants
 
-if ("$(uname -m)" == "x86_64"); then
+if [ "$(uname -m)" == "x86_64" ]; then
   HOMEBREW_PREFIX="/url/local"
 else
   HOMEBREW_PREFIX="/opt/homebrew"
