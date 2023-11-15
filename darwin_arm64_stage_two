@@ -20,8 +20,8 @@ fancy_echo() {
 HOMEBREW_PREFIX="/opt/homebrew"
 OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
 LAPTOP_PREFIX="$HOME/.laptop"
-VIM_BUNDLE="$HOME/.vim/bundle"
-VIM_VUNDLE="$HOME/.vim/bundle/Vundle.vim"
+VIM_BUNDLE_PREFIX="$HOME/.vim/bundle"
+VIM_VUNDLE_PREFIX="$HOME/.vim/bundle/Vundle.vim"
 
 #change shell to zsh
 if [ "$(command -v zsh)" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
