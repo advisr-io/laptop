@@ -43,7 +43,7 @@ if [ -d "$OH_MY_ZSH_PREFIX" ]; then
   cd - || exit
 else
   fancy_echo "Installing On My ZSH ..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 git submodule update --init --recursive
