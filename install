@@ -8,13 +8,9 @@ _dir="$HOME/.laptop"
 _uname="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
 if [ ! -f ".git/config" ] || ! grep -q "advisr-io/laptop.git" ".git/config"; then
-  sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/updates/${_uname}_stage_one")"
+  sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/main/${_uname}_stage_one")"
   git clone git@github.com:advisr-io/laptop.git "$_dir"
-  cd "$_dir" || exit
-  git checkout updates
-  git pull
-  cd - || exit
-  sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/updates/${_uname}_stage_two")"
+  sh -c "$(curl -fsS "https://raw.githubusercontent.com/advisr-io/laptop/main/${_uname}_stage_two")"
 else
   sh -c "./${_uname}_stage_one"
   sh -c "./${_uname}_stage_two"
