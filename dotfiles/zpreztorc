@@ -55,7 +55,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 #zstyle ':prezto:module:prompt' theme 'crowdtap'
-zstyle ':prezto:module:prompt' theme 'skpw'
+zstyle ':prezto:module:prompt' theme 'skwp'
 
 # Set syntax highlighters, default: all
 zstyle ':prezto:module:syntax-highlighting' highlighters \
