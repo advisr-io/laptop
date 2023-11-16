@@ -4,6 +4,7 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Michael D'Auria <michaeld@crowdtap.com>
+#   Jonathon Storer <jstorer@advisr.com>
 #
 
 # Set case-sensitivity for completion, history lookup, etc.
@@ -36,9 +37,7 @@ zstyle ':prezto:load' pmodule \
   'node' \
   'osx' \
   'prompt' \
-  'rails' \
   'rsync' \
-  'ruby' \
   'tmux'
 
 # To enable key bindings, add the following to zpreztorc, and replace 'map'

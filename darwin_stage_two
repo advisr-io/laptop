@@ -59,18 +59,17 @@ cd -
 #
 
 dotfiles=(
-  "tmux-tmate.conf"
+  "asdfrc"
   "tmate.conf"
+  "tmux-tmate.conf"
   "tmux.conf"
   "vimrc"
-  "zprezto"
   "zlogin"
   "zlogout"
   "zpreztorc"
   "zprofile"
   "zshenv"
   "zshrc"
-  "zsh-themes"
 )
 
 for dotfile in "${dotfiles[@]}"; do
