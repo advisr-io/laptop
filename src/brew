@@ -1,0 +1,77 @@
+#
+# Setup Homebrew
+#
+
+sudo mkdir -p "$HOMEBREW_PREFIX"
+sudo chflags norestricted "$HOMEBREW_PREFIX"
+sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
+
+# Install Homebrew if not already installed
+if ! command -v brew > /dev/null 2>&1; then
+  fancy_echo "Installing Homebrew ..."
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL 'https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh')"
+
+  eval "$("$HOMEBREW_PREFIX"/bin/brew shellenv)"
+fi
+
+# Update Homebrew formulae
+fancy_echo "Updating Homebrew formulae ..."
+brew update --force
+
+# Install packages and apps using brew and cask
+brew bundle --file=- <<EOF
+tap "homebrew/services"
+tap "homebrew/cask-versions"
+
+# general
+brew "gcc"
+brew "openssl"
+brew "zsh"
+brew "rename"
+brew "jq"
+brew "coreutils"
+brew "htop"
+brew "watch"
+brew "the_silver_searcher"
+brew "ripgrep"
+brew "git"
+brew "hub"
+brew "vim"
+brew "ctags"
+brew "shellcheck"
+brew "tmux"
+brew "tmate"
+brew "reattach-to-user-namespace"
+brew "k9s"
+brew "telnet"
+brew "parallel"
+
+# advisr
+brew "cairo"
+brew "pango"
+brew "libpng"
+brew "jpeg"
+brew "giflib"
+brew "librsvg"
+brew "pixman"
+brew "forego"
+
+# windowed apps
+cask "slack"
+cask "google-chrome"
+cask "iterm2"
+cask "textmate"
+cask "visual-studio-code"
+cask "pgadmin4"
+cask "redisinsight"
+cask "postman"
+cask "licecap"
+
+cask "alfred"
+cask "rectangle"
+cask "docker"
+cask "vagrant"
+cask "tunnelblick"
+cask "ngrok"
+
+EOF

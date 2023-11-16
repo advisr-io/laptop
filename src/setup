@@ -1,0 +1,19 @@
+
+#
+# Install ASDF Plugins
+#
+
+if [[ -s "$HOME/.asdf/asdf.sh" ]]; then
+  source "$HOME/.asdf/asdf.sh"
+
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+  asdf plugin update --all
+  asdf install nodejs latest
+fi
+
+#
+# Install Vim Plugins
+#
+
+vim +PluginInstall +qall

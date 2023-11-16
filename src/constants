@@ -1,0 +1,11 @@
+#
+# Constants
+#
+
+if [ "$(uname -m)" == "x86_64" ]; then
+  HOMEBREW_PREFIX="/usr/local"
+else
+  HOMEBREW_PREFIX="/opt/homebrew"
+fi
+
+export LAPTOP_PREFIX="$HOME/.laptop"

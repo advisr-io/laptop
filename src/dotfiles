@@ -1,0 +1,44 @@
+#
+# Link dotfiles
+#
+
+dotfiles=(
+  "asdfrc"
+  "tmate.conf"
+  "tmux-tmate.conf"
+  "tmux.conf"
+  "vimrc"
+  "zlogin"
+  "zlogout"
+  "zpreztorc"
+  "zprofile"
+  "zshenv"
+  "zshrc"
+)
+
+for dotfile in "${dotfiles[@]}"; do
+  target="$LAPTOP_PREFIX/dotfiles/$dotfile"
+  link="$HOME/.$dotfile"
+
+  if [ -e "$link" ]; then
+    if [ "$(readlink "$link")" == "$target" ]; then
+      continue
+    fi
+
+    mv "$link" "$link.bak"
+  fi
+
+  echo "Installing $dotfile"
+  ln -sf "$LAPTOP_PREFIX/dotfiles/$dotfile" "$HOME/.$dotfile"
+done
+
+libraries=(
+  "asdf"
+  "vim"
+  "zprezto"
+)
+
+for library in "${libraries[@]}"; do
+  echo "Linking $library"
+  ln -sf "$LAPTOP_PREFIX/$library" "$HOME/.$library"
+done
