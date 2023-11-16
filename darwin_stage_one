@@ -86,9 +86,6 @@ brew "librsvg"
 brew "pixman"
 brew "forego"
 
-# language support
-brew "asdf"
-
 # windowed apps
 cask "slack"
 cask "google-chrome"
