@@ -8,8 +8,8 @@ vim +PluginInstall +qall
 # Install ASDF Plugins
 #
 
-if [[ -s "${$HOME}/.asdf/asdf.sh" ]]; then
-  source "${$HOME}/.asdf/asdf.sh"
+if [[ -s "$HOME/.asdf/asdf.sh" ]]; then
+  source "$HOME/.asdf/asdf.sh"
 
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
