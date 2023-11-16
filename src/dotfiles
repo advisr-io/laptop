@@ -1,3 +1,7 @@
+#
+# Link dotfiles
+#
+
 dotfiles=(
   "tmux-tmate.conf"
   "tmate.conf"

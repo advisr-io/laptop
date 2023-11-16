@@ -1,4 +1,7 @@
-#change shell to zsh
+#
+# Change shell to zsh
+#
+
 if [ "$(command -v zsh)" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
   shell_path="$(command -v zsh)"
 

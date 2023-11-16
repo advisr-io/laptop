@@ -1,4 +1,6 @@
+#
 # Constants
+#
 
 if [ "$(uname -m)" == "x86_64" ]; then
   HOMEBREW_PREFIX="/usr/local"
@@ -6,7 +8,4 @@ else
   HOMEBREW_PREFIX="/opt/homebrew"
 fi
 
-export OH_MY_ZSH_PREFIX="$HOME/.oh-my-zsh"
 export LAPTOP_PREFIX="$HOME/.laptop"
-export VIM_BUNDLE_PREFIX="$HOME/.vim/bundle"
-export VIM_VUNDLE_PREFIX="$HOME/.vim/bundle/Vundle.vim"

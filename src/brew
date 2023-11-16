@@ -1,4 +1,7 @@
+#
 # Setup Homebrew
+#
+
 sudo mkdir -p "$HOMEBREW_PREFIX"
 sudo chflags norestricted "$HOMEBREW_PREFIX"
 sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
