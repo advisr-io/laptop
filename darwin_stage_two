@@ -99,11 +99,6 @@ for library in "${libraries[@]}"; do
   ln -sf "$LAPTOP_PREFIX/$library" "$HOME/.$library"
 done
 
-#
-# Install Vim Plugins
-#
-
-vim +PluginInstall +qall
 
 #
 # Install ASDF Plugins
@@ -115,7 +110,14 @@ if [[ -s "$HOME/.asdf/asdf.sh" ]]; then
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
   asdf plugin update --all
+  asdf install nodejs latest
 fi
+
+#
+# Install Vim Plugins
+#
+
+vim +PluginInstall +qall
 
 #
 # Set MacOS defaults
