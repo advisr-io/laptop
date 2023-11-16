@@ -24,7 +24,6 @@ stageTwoFiles=(
   "./src/utils"
   "./src/constants"
   "./src/shell"
-  "./src/oh_my_zsh"
   "./src/submodules"
   "./src/dotfiles"
   "./src/vim"

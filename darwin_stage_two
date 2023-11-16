@@ -41,17 +41,6 @@ if [ "$(command -v zsh)" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
   sudo chsh -s "$shell_path" "$USER"
 fi
 
-#Check if Oh My Zsh is installed
-if [ -d "$OH_MY_ZSH_PREFIX" ]; then
-  fancy_echo "Updating On My ZSH ..."
-  cd "$OH_MY_ZSH_PREFIX" || exit
-  git pull
-  cd - || exit
-else
-  fancy_echo "Installing On My ZSH ..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-fi
-
 cd "$LAPTOP_PREFIX" || exit
 git submodule update --init --recursive
 cd -
@@ -90,6 +79,7 @@ done
 libraries=(
   "asdf"
   "vim"
+  "zpresto"
 )
 
 for library in "${libraries[@]}"; do
