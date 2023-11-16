@@ -316,7 +316,7 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ###############################################################################
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" "Mail" "Safari" "SystemUIServer"; do
-  osascript -e "tell application '$app' to quit"
+  osascript -e 'tell application "$app" to quit'
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
