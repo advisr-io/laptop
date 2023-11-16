@@ -1,8 +1,6 @@
 #
 # Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+# Executes First
 #
 
 #
@@ -42,9 +40,11 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOMEBREW_PREFIX/{bin,sbin}
   /usr/local/{bin,sbin}
   $path
 )
+
 
 #
 # Less
@@ -70,13 +70,3 @@ if [[ -d "$TMPDIR" ]]; then
     mkdir -p "$TMPPREFIX"
   fi
 fi
-
-#
-# Add a local themes directory
-#
-fpath=($fpath ${ZDOTDIR:-$HOME}/.zsh-themes)
-
-#
-# Configure BrewCask
-#
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"

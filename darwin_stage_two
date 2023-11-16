@@ -19,7 +19,7 @@ fancy_echo() {
 # Constants
 
 if [ "$(uname -m)" == "x86_64" ]; then
-  HOMEBREW_PREFIX="/url/local"
+  HOMEBREW_PREFIX="/usr/local"
 else
   HOMEBREW_PREFIX="/opt/homebrew"
 fi

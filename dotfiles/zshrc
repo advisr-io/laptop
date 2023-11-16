@@ -1,19 +1,38 @@
 #
 # Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+# Executes Third
 #
 
-autoload -U compinit
-compinit
+#
+# Homebrew
+#
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+if [[ -s "$HOMEBREW_PREFIX/bin/brew" ]]; then
+  eval "$HOMEBREW_PREFIX/bin/brew shellenv"
 fi
 
-#Allow History Substring Search With Up/Down nd UP and DOWN arrow keys
+#
+# ASDF
+#
 
+if [[ -s "${$HOME}/.asdf/asdf.sh" ]]; then
+  source "${$HOME}/.asdf/asdf.sh"
+
+  fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
+#
+# Prezto
+#
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+  fpath=($fpath ${ZDOTDIR:-$HOME}/.zsh-themes)
+fi
+
+# Allow History Substring Search With Up/Down nd UP and DOWN arrow keys
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+
+autoload -U compinit && compinit
