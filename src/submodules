@@ -1,7 +1,0 @@
-#
-# Install or Update submoules
-#
-
-cd "$LAPTOP_PREFIX" || exit
-git submodule update --init --recursive
-cd -
