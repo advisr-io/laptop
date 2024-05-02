@@ -125,3 +125,9 @@ if [ "$(command -v zsh)" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
   fi
   sudo chsh -s "$shell_path" "$USER"
 fi
+
+#
+# Install Rosetta for Docker
+#
+
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
