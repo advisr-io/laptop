@@ -47,6 +47,11 @@ if ! command -v brew > /dev/null 2>&1; then
   eval "$("$HOMEBREW_PREFIX"/bin/brew shellenv)"
 fi
 
+if [ ! xcode-select -p &>/dev/null ]; then
+  xcode-select --install
+  sudo xcodebuild -license accept
+fi
+
 # Update Homebrew formulae
 fancy_echo "Updating Homebrew formulae ..."
 brew update --force
@@ -54,7 +59,6 @@ brew update --force
 # Install packages and apps using brew and cask
 brew bundle --file=- <<EOF
 tap "homebrew/services"
-tap "homebrew/cask-versions"
 
 # general
 brew "gcc"
